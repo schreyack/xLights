@@ -404,15 +404,67 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
 
     xlColor color = xlBLACK;
 
+    // Pan/Tilt to DMX conversion for channels 1-4
+    // Pan and Tilt are 16-bit values (0-65535) representing 0-3600 degrees
+    // DMX mapping: Channel 1 = Pan coarse (MSB), Channel 2 = Pan fine (LSB),
+    //             Channel 3 = Tilt coarse (MSB), Channel 4 = Tilt fine (LSB)
+    
+    // Get Pan value (0-65535 representing 0-3600 degrees)
+    int pan_16bit = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, 65535, buffer.GetStartTimeMS(), buffer.GetEndTimeMS());
+    int pan_coarse = (pan_16bit >> 8) & 0xFF;  // MSB
+    int pan_fine = pan_16bit & 0xFF;            // LSB
+    
+    // Get Tilt value (0-65535 representing 0-3600 degrees)
+    int tilt_16bit = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, 0, 65535, buffer.GetStartTimeMS(), buffer.GetEndTimeMS());
+    int tilt_coarse = (tilt_16bit >> 8) & 0xFF;  // MSB
+    int tilt_fine = tilt_16bit & 0xFF;            // LSB
+    
+    // Apply inversion if needed
+    if (SettingsMap.GetBool("CHECKBOX_INVMHDMXMH1", false)) {
+        pan_coarse = 255 - pan_coarse;
+        pan_fine = 255 - pan_fine;
+    }
+    if (SettingsMap.GetBool("CHECKBOX_INVMHDMXMH2", false)) {
+        tilt_coarse = 255 - tilt_coarse;
+        tilt_fine = 255 - tilt_fine;
+    }
+    
+    // Set Pan/Tilt channels
+    if (num_channels >= 1) {
+        color.red = pan_coarse;
+        color.green = 0;
+        color.blue = 0;
+        buffer.SetPixel(0, 0, color, false, false, true);
+    }
+    if (num_channels >= 2) {
+        color.red = pan_fine;
+        color.green = 0;
+        color.blue = 0;
+        buffer.SetPixel(1, 0, color, false, false, true);
+    }
+    if (num_channels >= 3) {
+        color.red = tilt_coarse;
+        color.green = 0;
+        color.blue = 0;
+        buffer.SetPixel(2, 0, color, false, false, true);
+    }
+    if (num_channels >= 4) {
+        color.red = tilt_fine;
+        color.green = 0;
+        color.blue = 0;
+        buffer.SetPixel(3, 0, color, false, false, true);
+    }
+    
+    // Handle remaining channels (5+) as before
     if (StartsWith(string_type, "Single Color")) {
         // handle channels for single color nodes
-        for (uint32_t i = 1; i <= DMXMH_CHANNELS; ++i) {
+        for (uint32_t i = 5; i <= DMXMH_CHANNELS; ++i) {
             if (SetDMXMHSinglColorPixel(i, num_channels, SettingsMap, eff_pos, color, buffer))
                 return;
         }
    } else {
         // handle channels for 3 color nodes
-       for (uint32_t i = 1; i <= DMXMH_CHANNELS / 3; ++i) {
+       for (uint32_t i = 2; i <= DMXMH_CHANNELS / 3; ++i) {
             if (SetDMXMHRGBNode(i, num_channels, SettingsMap, eff_pos, color, buffer, string_type))
                 return;
         }
