@@ -892,6 +892,35 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	Notebook7->AddPage(ChannelPanelMH1, _("Channels 1-16"), false);
 	Notebook7->AddPage(ChannelPanelMH2, _("Channels 17-32"), false);
 	Notebook7->AddPage(ChannelPanelMH3, _("Channels 33-48"), false);
+	ChannelPanelMH2->Hide();
+	ChannelPanelMH3->Hide();
+	Notebook7->RemovePage(2);
+	Notebook7->RemovePage(1);
+	
+	// Hide the text controls for channel 3-16 (keep only Pan/Tilt visible)
+	for (int i = 3; i <= 16; i++)
+	{
+		wxString label_ctrl = wxString::Format("ID_STATICTEXT_DMXMH%d", i);
+		wxStaticText* label = (wxStaticText*)(FindWindowByName(label_ctrl));
+		if (label) label->Hide();
+		
+		wxString slider_ctrl = wxString::Format("ID_SLIDER_DMXMH%d", i);
+		wxSlider* slider = (wxSlider*)(FindWindowByName(slider_ctrl));
+		if (slider) slider->Hide();
+		
+		wxString vc_ctrl = wxString::Format("ID_VALUECURVE_DMXMH%d", i);
+		wxButton* vc = (wxButton*)(FindWindowByName(vc_ctrl));
+		if (vc) vc->Hide();
+		
+		wxString text_ctrl = wxString::Format("IDD_TEXTCTRL_DMXMH%d", i);
+		wxTextCtrl* text = (wxTextCtrl*)(FindWindowByName(text_ctrl));
+		if (text) text->Hide();
+		
+		wxString check_ctrl = wxString::Format("ID_CHECKBOX_INVDMXMH%d", i);
+		wxCheckBox* check = (wxCheckBox*)(FindWindowByName(check_ctrl));
+		if (check) check->Hide();
+	}
+	
 	FlexGridSizer_Main->Add(Notebook7, 1, wxALL|wxEXPAND, 2);
 	FlexGridSizer3 = new wxFlexGridSizer(0, 2, 0, 0);
 	ButtonRemap = new wxButton(this, ID_BUTTON1, _("Remap Channels"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
@@ -901,6 +930,7 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	Button_Load_State = new wxButton(this, ID_BUTTON_LOAD_STATE, _("Load From State"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON_LOAD_STATE"));
 	FlexGridSizer3->Add(Button_Load_State, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	FlexGridSizer_Main->Add(FlexGridSizer3, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
+	FlexGridSizer3->Show(false);
 	SetSizer(FlexGridSizer_Main);
 
 	Connect(ID_VALUECURVE_DMXMH1, wxEVT_COMMAND_BUTTON_CLICKED, (wxObjectEventFunction)&DMXMHPanel::OnVCButtonClick);
@@ -1007,68 +1037,6 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
     ValueCurve_DMXMH46->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
     ValueCurve_DMXMH47->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
     ValueCurve_DMXMH48->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
-
-    // Hide extra notebook pages - only show Pan/Tilt tab
-    ChannelPanelMH2->Hide();
-    ChannelPanelMH3->Hide();
-    
-    // Hide channels 3-16 in the first panel (keep only Pan/Tilt visible)
-    Label_DMXMH3->Hide();
-    Slider_DMXMH3->Hide();
-    ValueCurve_DMXMH3->Hide();
-    CheckBox_INVDMXMH3->Hide();
-    Label_DMXMH4->Hide();
-    Slider_DMXMH4->Hide();
-    ValueCurve_DMXMH4->Hide();
-    CheckBox_INVDMXMH4->Hide();
-    Label_DMXMH5->Hide();
-    Slider_DMXMH5->Hide();
-    ValueCurve_DMXMH5->Hide();
-    CheckBox_INVDMXMH5->Hide();
-    Label_DMXMH6->Hide();
-    Slider_DMXMH6->Hide();
-    ValueCurve_DMXMH6->Hide();
-    CheckBox_INVDMXMH6->Hide();
-    Label_DMXMH7->Hide();
-    Slider_DMXMH7->Hide();
-    ValueCurve_DMXMH7->Hide();
-    CheckBox_INVDMXMH7->Hide();
-    Label_DMXMH8->Hide();
-    Slider_DMXMH8->Hide();
-    ValueCurve_DMXMH8->Hide();
-    CheckBox_INVDMXMH8->Hide();
-    Label_DMXMH9->Hide();
-    Slider_DMXMH9->Hide();
-    ValueCurve_DMXMH9->Hide();
-    CheckBox_INVDMXMH9->Hide();
-    Label_DMXMH10->Hide();
-    Slider_DMXMH10->Hide();
-    ValueCurve_DMXMH10->Hide();
-    CheckBox_INVDMXMH10->Hide();
-    Label_DMXMH11->Hide();
-    Slider_DMXMH11->Hide();
-    ValueCurve_DMXMH11->Hide();
-    CheckBox_INVDMXMH11->Hide();
-    Label_DMXMH12->Hide();
-    Slider_DMXMH12->Hide();
-    ValueCurve_DMXMH12->Hide();
-    CheckBox_INVDMXMH12->Hide();
-    Label_DMXMH13->Hide();
-    Slider_DMXMH13->Hide();
-    ValueCurve_DMXMH13->Hide();
-    CheckBox_INVDMXMH13->Hide();
-    Label_DMXMH14->Hide();
-    Slider_DMXMH14->Hide();
-    ValueCurve_DMXMH14->Hide();
-    CheckBox_INVDMXMH14->Hide();
-    Label_DMXMH15->Hide();
-    Slider_DMXMH15->Hide();
-    ValueCurve_DMXMH15->Hide();
-    CheckBox_INVDMXMH15->Hide();
-    Label_DMXMH16->Hide();
-    Slider_DMXMH16->Hide();
-    ValueCurve_DMXMH16->Hide();
-    CheckBox_INVDMXMH16->Hide();
 
 	ValidateWindow();
 }

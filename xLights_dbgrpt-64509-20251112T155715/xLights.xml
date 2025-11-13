@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report version="1.0" kind="exception">
+  <system description="macOS Sequoia Version 15.5 (Build 24F74)"/>
+  <stack>
+    <frame level="0" function="wxFatalSignalHandler(int)" offset="0" address="0x106d000c4" file="utilsunx.cpp" line="1513"/>
+    <frame level="1" function="_sigtramp" offset="0" address="0x198cfc624"/>
+    <frame level="2" function="DMXMHEffect::SetDefaultParameters()" offset="0" address="0x106c14edc" file="DMXMHEffect.cpp" line="110"/>
+    <frame level="3" function="EffectsPanel::SetDefaultEffectValues(wxString const&amp;)" offset="0" address="0x105dfcf4c" file="EffectsPanel.cpp" line="119"/>
+    <frame level="4" function="xLightsFrame::ResetPanelDefaultSettings(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const&amp;, Model const*, bool)" offset="0" address="0x106266e40" file="tabSequencer.cpp" line="2896"/>
+    <frame level="5" function="xLightsFrame::SetEffectControls(std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const&amp;, std::__1::basic_string&lt;char, std::__1::char_traits&lt;char&gt;, std::__1::allocator&lt;char&gt;&gt; const&amp;, SettingsMap const&amp;, SettingsMap const&amp;, int, int, bool)" offset="0" address="0x106265f00" file="tabSequencer.cpp" line="2658"/>
+    <frame level="6" function="xLightsFrame::SelectedEffectChanged(SelectedEffectChangedEvent&amp;)" offset="0" address="0x10626696c" file="tabSequencer.cpp" line="1225"/>
+    <frame level="7" function="wxEvtHandler::SearchDynamicEventTable(wxEvent&amp;)" offset="0" address="0x106d03d54" file="event.cpp" line="1927"/>
+    <frame level="8" function="wxEvtHandler::ProcessEvent(wxEvent&amp;)" offset="0" address="0x106d03a34" file="event.cpp" line="1556"/>
+    <frame level="9" function="wxEvtHandler::ProcessEventLocally(wxEvent&amp;)" offset="0" address="0x106d03bc8" file="event.cpp" line="1587"/>
+    <frame level="10" function="wxEvtHandler::ProcessEvent(wxEvent&amp;)" offset="0" address="0x106d03980" file="event.cpp" line="1560"/>
+    <frame level="11" function="wxWindowBase::TryAfter(wxEvent&amp;)" offset="0" address="0x106ea25b0" file="wincmn.cpp" line="3508"/>
+    <frame level="12" function="wxWindowBase::TryAfter(wxEvent&amp;)" offset="0" address="0x106ea25b0" file="wincmn.cpp" line="3508"/>
+    <frame level="13" function="wxWindowBase::TryAfter(wxEvent&amp;)" offset="0" address="0x106ea25b0" file="wincmn.cpp" line="3508"/>
+    <frame level="14" function="EffectsGrid::RaiseSelectedEffectChanged(Effect*, bool, bool, bool) const" offset="0" address="0x106b68188" file="EffectsGrid.cpp" line="7196"/>
+    <frame level="15" function="EffectsGrid::mouseDown(wxMouseEvent&amp;)" offset="0" address="0x106b5b0e4" file="EffectsGrid.cpp" line="1974"/>
+    <frame level="16" function="wxEventHashTable::HandleEvent(wxEvent&amp;, wxEvtHandler*)" offset="0" address="0x106d02cc0" file="event.cpp" line="1073"/>
+    <frame level="17" function="wxEvtHandler::ProcessEventLocally(wxEvent&amp;)" offset="0" address="0x106d03b5c" file="event.cpp" line="1587"/>
+    <frame level="18" function="wxEvtHandler::ProcessEvent(wxEvent&amp;)" offset="0" address="0x106d03980" file="event.cpp" line="1560"/>
+    <frame level="19" function="wxEvtHandler::SafelyProcessEvent(wxEvent&amp;)" offset="0" address="0x106d03820" file="event.cpp" line="1672"/>
+    <frame level="20" function="wxWidgetCocoaImpl::DoHandleMouseEvent(NSEvent*)" offset="0" address="0x106dcc688" file="window.mm" line="4119"/>
+    <frame level="21" function="wxWidgetCocoaImpl::mouseEvent(NSEvent*, NSView*, void*)" offset="0" address="0x106dc5900" file="window.mm" line="1539"/>
+    <frame level="22" function="-[NSWindow(NSEventRouting) _handleMouseDownEvent:isDelayedEvent:]" offset="0" address="0x19ce6dc54"/>
+    <frame level="23" function="-[NSWindow(NSEventRouting) _reallySendEvent:isDelayedEvent:]" offset="0" address="0x19cdf9cc4"/>
+    <frame level="24" function="-[NSWindow(NSEventRouting) sendEvent:]" offset="0" address="0x19cdf9910"/>
+    <frame level="25" function="-[wxNSWindow sendEvent:]" offset="0" address="0x106dae448" file="nonownedwnd.mm" line="198"/>
+    <frame level="26" function="-[NSApplication(NSEventRouting) sendEvent:]" offset="0" address="0x19d671330"/>
+    <frame level="27" function="-[wxNSApplication sendEvent:]" offset="0" address="0x106d2554c" file="utils.mm" line="372"/>
+    <frame level="28" function="-[NSApplication _handleEvent:]" offset="0" address="0x19d27042c"/>
+    <frame level="29" function="-[NSApplication run]" offset="0" address="0x19ccc6c8c"/>
+    <frame level="30" function="wxGUIEventLoop::OSXDoRun()" offset="0" address="0x106da4500" file="evtloop.mm" line="300"/>
+    <frame level="31" function="wxCFEventLoop::DoRun()" offset="0" address="0x106cf0204" file="evtloop_cf.cpp" line="0"/>
+    <frame level="32" function="wxEventLoopBase::Run()" offset="0" address="0x106c81278" file="evtloopcmn.cpp" line="89"/>
+    <frame level="33" function="wxAppConsoleBase::MainLoop()" offset="0" address="0x106c5e690" file="appbase.cpp" line="0"/>
+    <frame level="34" function="wxApp::OnRun()" offset="0" address="0x106d62b74" file="app.cpp" line="0"/>
+    <frame level="35" function="wxEntry(int&amp;, wchar_t**)" offset="0" address="0x106ca6fb0" file="init.cpp" line="557"/>
+    <frame level="36" function="main" offset="0" address="0x106ac11d4" file="xLightsApp.cpp" line="0"/>
+    <frame level="37" function="start" offset="0" address="0x198922b98"/>
+  </stack>
+</report>

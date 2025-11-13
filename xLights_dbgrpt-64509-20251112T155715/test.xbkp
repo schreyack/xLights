@@ -1,0 +1,1200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsequence BaseChannel="0" ChanCtrlBasic="0" ChanCtrlColor="0" FixedPointTiming="1" ModelBlending="true">
+  <head>
+    <version>2025.12.1</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website></author-website>
+    <song></song>
+    <artist></artist>
+    <album></album>
+    <MusicURL></MusicURL>
+    <comment></comment>
+    <sequenceTiming>25 ms</sequenceTiming>
+    <sequenceType>Animation</sequenceType>
+    <mediaFile/>
+    <sequenceDuration>30.000</sequenceDuration>
+    <imageDir/>
+  </head>
+  <nextid>1</nextid>
+  <Jukebox/>
+  <ColorPalettes>
+    <ColorPalette>C_BUTTON_Palette1=#FFFFFF,C_BUTTON_Palette2=#FF0000,C_BUTTON_Palette3=#00FF00,C_BUTTON_Palette4=#0000FF,C_BUTTON_Palette5=#FFFF00,C_BUTTON_Palette6=#000000,C_BUTTON_Palette7=#00FFFF,C_BUTTON_Palette8=#FF00FF,C_CHECKBOX_Palette1=1,C_CHECKBOX_Palette2=1</ColorPalette>
+  </ColorPalettes>
+  <EffectDB>
+    <Effect>B_CHOICE_BufferStyle=Per Model Default,E_CHECKBOX_INVDMX1=0,E_CHECKBOX_INVDMX10=0,E_CHECKBOX_INVDMX11=0,E_CHECKBOX_INVDMX12=0,E_CHECKBOX_INVDMX13=0,E_CHECKBOX_INVDMX14=0,E_CHECKBOX_INVDMX15=0,E_CHECKBOX_INVDMX16=0,E_CHECKBOX_INVDMX17=0,E_CHECKBOX_INVDMX18=0,E_CHECKBOX_INVDMX19=0,E_CHECKBOX_INVDMX2=0,E_CHECKBOX_INVDMX20=0,E_CHECKBOX_INVDMX21=0,E_CHECKBOX_INVDMX22=0,E_CHECKBOX_INVDMX23=0,E_CHECKBOX_INVDMX24=0,E_CHECKBOX_INVDMX25=0,E_CHECKBOX_INVDMX26=0,E_CHECKBOX_INVDMX27=0,E_CHECKBOX_INVDMX28=0,E_CHECKBOX_INVDMX29=0,E_CHECKBOX_INVDMX3=0,E_CHECKBOX_INVDMX30=0,E_CHECKBOX_INVDMX31=0,E_CHECKBOX_INVDMX32=0,E_CHECKBOX_INVDMX33=0,E_CHECKBOX_INVDMX34=0,E_CHECKBOX_INVDMX35=0,E_CHECKBOX_INVDMX36=0,E_CHECKBOX_INVDMX37=0,E_CHECKBOX_INVDMX38=0,E_CHECKBOX_INVDMX39=0,E_CHECKBOX_INVDMX4=0,E_CHECKBOX_INVDMX40=0,E_CHECKBOX_INVDMX41=0,E_CHECKBOX_INVDMX42=0,E_CHECKBOX_INVDMX43=0,E_CHECKBOX_INVDMX44=0,E_CHECKBOX_INVDMX45=0,E_CHECKBOX_INVDMX46=0,E_CHECKBOX_INVDMX47=0,E_CHECKBOX_INVDMX48=0,E_CHECKBOX_INVDMX5=0,E_CHECKBOX_INVDMX6=0,E_CHECKBOX_INVDMX7=0,E_CHECKBOX_INVDMX8=0,E_CHECKBOX_INVDMX9=0,E_NOTEBOOK1=Channels 1-16,E_SLIDER_DMX1=0,E_SLIDER_DMX10=0,E_SLIDER_DMX11=0,E_SLIDER_DMX12=0,E_SLIDER_DMX13=0,E_SLIDER_DMX14=0,E_SLIDER_DMX15=0,E_SLIDER_DMX16=0,E_SLIDER_DMX17=0,E_SLIDER_DMX18=0,E_SLIDER_DMX19=0,E_SLIDER_DMX2=0,E_SLIDER_DMX20=0,E_SLIDER_DMX21=0,E_SLIDER_DMX22=0,E_SLIDER_DMX23=0,E_SLIDER_DMX24=0,E_SLIDER_DMX25=0,E_SLIDER_DMX26=0,E_SLIDER_DMX27=0,E_SLIDER_DMX28=0,E_SLIDER_DMX29=0,E_SLIDER_DMX3=0,E_SLIDER_DMX30=0,E_SLIDER_DMX31=0,E_SLIDER_DMX32=0,E_SLIDER_DMX33=0,E_SLIDER_DMX34=0,E_SLIDER_DMX35=0,E_SLIDER_DMX36=0,E_SLIDER_DMX37=0,E_SLIDER_DMX38=0,E_SLIDER_DMX39=0,E_SLIDER_DMX4=0,E_SLIDER_DMX40=0,E_SLIDER_DMX41=0,E_SLIDER_DMX42=0,E_SLIDER_DMX43=0,E_SLIDER_DMX44=0,E_SLIDER_DMX45=0,E_SLIDER_DMX46=0,E_SLIDER_DMX47=0,E_SLIDER_DMX48=0,E_SLIDER_DMX5=0,E_SLIDER_DMX6=0,E_SLIDER_DMX7=0,E_SLIDER_DMX8=0,E_SLIDER_DMX9=0</Effect>
+    <Effect>B_CHOICE_BufferStyle=Per Model Default,E_CHECKBOX_INVDMX1=0,E_CHECKBOX_INVDMX10=0,E_CHECKBOX_INVDMX11=0,E_CHECKBOX_INVDMX12=0,E_CHECKBOX_INVDMX2=0,E_CHECKBOX_INVDMX3=0,E_CHECKBOX_INVDMX4=0,E_CHECKBOX_INVDMX5=0,E_CHECKBOX_INVDMX6=0,E_CHECKBOX_INVDMX7=0,E_CHECKBOX_INVDMX8=0,E_CHECKBOX_INVDMX9=0,E_NOTEBOOK1=Channels 1-16,E_SLIDER_DMX1=0,E_SLIDER_DMX10=0,E_SLIDER_DMX11=0,E_SLIDER_DMX12=0,E_SLIDER_DMX2=0,E_SLIDER_DMX3=0,E_SLIDER_DMX4=0,E_SLIDER_DMX5=0,E_SLIDER_DMX6=0,E_SLIDER_DMX7=0,E_SLIDER_DMX8=0,E_SLIDER_DMX9=0</Effect>
+  </EffectDB>
+  <DataLayers>
+    <DataLayer lor_params="0" channel_offset="0" num_channels="0" num_frames="0" data="&lt;rendered: erase-mode&gt;" source="&lt;auto-generated&gt;" name="Nutcracker"/>
+  </DataLayers>
+  <DisplayElements>
+    <Element collapsed="0" type="timing" name="New Timing" visible="1" views="Master View,Standard Show,Roof - All,Music Show - FRONT Only,Lasers Only" active="1"/>
+    <Element collapsed="0" type="model" name="01.1.2 EVERYTHING FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="01.1.2a EVERYTHING FRONT-2" visible="1"/>
+    <Element collapsed="0" type="model" name="01.1.3 EVERYTHING FRONT BUT GARDEN MATRIX" visible="1"/>
+    <Element collapsed="0" type="model" name="01.1.4 EXCEPT MATRIX TREE" visible="1"/>
+    <Element collapsed="0" type="model" name="01.2.2 EVERYTHING BUT MAIN FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="01.3.2 ROOF - EVERYTHING FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="02.1.2 OFFICE ROOF FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="03.1.2 BATH ROOF FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="04.1.2 ENTRY ROOF FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="05.1.2 GARAGE ROOF FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="06.1.2 MAIN ROOF FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="07.0.0 FENCE + GATE" visible="1"/>
+    <Element collapsed="0" type="model" name="07.1.1 Fence" visible="1"/>
+    <Element collapsed="0" type="model" name="07.1.2 Fence Right" visible="1"/>
+    <Element collapsed="0" type="model" name="07.1.3 Fence Left" visible="1"/>
+    <Element collapsed="0" type="model" name="08.1.1 Gate" visible="1"/>
+    <Element collapsed="0" type="model" name="08.1.2 Gate Inner" visible="1"/>
+    <Element collapsed="0" type="model" name="08.1.3 Gate Outer" visible="1"/>
+    <Element collapsed="0" type="model" name="09.1.1 Pillars" visible="1"/>
+    <Element collapsed="0" type="model" name="09.1.2 Pillars Strobe" visible="1"/>
+    <Element collapsed="0" type="model" name="09.1.2 Pillars Color 2" visible="1"/>
+    <Element collapsed="0" type="model" name="09.1.2 Pillars Speed %" visible="1"/>
+    <Element collapsed="0" type="model" name="09.1.3 Pillars Group" visible="1"/>
+    <Element collapsed="0" type="model" name="09.1.4 Pillars Transition" visible="1"/>
+    <Element collapsed="0" type="model" name="10.1.1 Tree" visible="1"/>
+    <Element collapsed="0" type="model" name="11.1.1 Garage Front" visible="1"/>
+    <Element collapsed="0" type="model" name="11.2.1 Garage Door" visible="1"/>
+    <Element collapsed="0" type="model" name="12.1.1 Front Door" visible="1"/>
+    <Element collapsed="0" type="model" name="12.1.2 Front Door Right" visible="1"/>
+    <Element collapsed="0" type="model" name="12.1.3 Front Door Left" visible="1"/>
+    <Element collapsed="0" type="model" name="13.1.1 Garden Fence" visible="1"/>
+    <Element collapsed="0" type="model" name="13.1.2 Garden Street" visible="1"/>
+    <Element collapsed="0" type="model" name="13.1.3 Garden Driveway" visible="1"/>
+    <Element collapsed="0" type="model" name="14.2.1 FENCE GATE GARAGE FRONT" visible="1"/>
+    <Element collapsed="0" type="model" name="15.1.1 Office Window" visible="1"/>
+    <Element collapsed="0" type="model" name="16.1.1 Blinders" visible="1"/>
+    <Element collapsed="0" type="model" name="16.1.2 Blinders White" visible="1"/>
+    <Element collapsed="0" type="model" name="16.2.1 Blinder 1" visible="1"/>
+    <Element collapsed="0" type="model" name="16.2.2 Blinder 2" visible="1"/>
+    <Element collapsed="0" type="model" name="16.2.3 Blinder 3" visible="1"/>
+    <Element collapsed="0" type="model" name="16.2.4 Blinder 4" visible="1"/>
+    <Element collapsed="0" type="model" name="16.3.1 Blinder 1 White" visible="1"/>
+    <Element collapsed="0" type="model" name="16.3.2 Blinder 2 White" visible="1"/>
+    <Element collapsed="0" type="model" name="16.3.3 Blinder 3 White" visible="1"/>
+    <Element collapsed="0" type="model" name="16.3.4 Blinder 4 White" visible="1"/>
+    <Element collapsed="0" type="model" name="16.4.1 Blinder Column A" visible="1"/>
+    <Element collapsed="0" type="model" name="16.4.2 Blinder Column B" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.1 Blinder Middle 1" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.2 Blinder Middle 2" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.3 Blinder Middle 3" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.4 Blinder Middle 4" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.5 Blinder Middle 5" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.6 Blinder Middle 6" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.7 Blinder Middle 7" visible="1"/>
+    <Element collapsed="0" type="model" name="16.5.8 Blinder Middle 8" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1 Strobes" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1.1 Strobes 1368" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1.2 Strobes 2457" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 1" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 2" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 3" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 4" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 5" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 6" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 7" visible="1"/>
+    <Element collapsed="0" type="model" name="17.1.1 Strobe 8" visible="1"/>
+    <Element collapsed="0" type="model" name="17.10.1 Strobes (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.1 Moving Heads" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.1.1 MH Left" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.1.2 MH Right" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.1.3 MH Center" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.2 MH Dimmers" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.2.1 Dimmer 1" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.2.2 Dimmer 2" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.2.3 Dimmer 3" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.2.4 Dimmer 4" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.2.5 Dimmer 5" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.3 MH Colors" visible="1"/>
+    <Element collapsed="0" type="model" name="18.1.4 MH Strobe" visible="1"/>
+    <Element collapsed="0" type="model" name="18.10.1 MH (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="18.10.2 MH Dimmers (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="19.1.0 Vertical Smoke" visible="1"/>
+    <Element collapsed="0" type="model" name="19.1.1 Vertical Smoke 1" visible="1"/>
+    <Element collapsed="0" type="model" name="19.1.2 Vertical Smoke 2" visible="1"/>
+    <Element collapsed="0" type="model" name="19.2.0 Haze" visible="1"/>
+    <Element collapsed="0" type="model" name="19.3.0 Snow" visible="1"/>
+    <Element collapsed="0" type="model" name="99.1.1 Blinders (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.3.1 ROOF - ALL (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.3.2 EVERYTHING FRONT (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.3.2 EVERYTHING FRONT EXCEPT GATE (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.3.3 EVERYTHING FRONT BUT GARDEN MATRIX (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.3.3 FENCE + GATE (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.3.4 GARAGE FRONT (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.4.2 Gate Inner (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.4.3 Gate Outer (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.5.1 Tree (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="99.6.1 ROOF - EVERYTHING FRONT (Override)" visible="1"/>
+    <Element collapsed="0" type="model" name="100.1.1 GARDEN MATRIX" visible="1"/>
+    <Element collapsed="0" type="model" name="Garden Matrix" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 RGB 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 RGB 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 RGB 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 RGB 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Ground Fog 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Vertical Smoke 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Vertical Smoke 2" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Snow 1" visible="1"/>
+    <Element collapsed="0" type="model" name="01.1.1 EVERYTHING" visible="1"/>
+    <Element collapsed="0" type="model" name="01.3.1 ROOF - EVERYTHING" visible="1"/>
+    <Element collapsed="0" type="model" name="02.1.1 OFFICE ROOF" visible="1"/>
+    <Element collapsed="0" type="model" name="03.1.1 BATH ROOF" visible="1"/>
+    <Element collapsed="0" type="model" name="04.1.1 ENTRY ROOF" visible="1"/>
+    <Element collapsed="0" type="model" name="05.1.1 GARAGE ROOF" visible="1"/>
+    <Element collapsed="0" type="model" name="06.1.1 MAIN ROOF" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 1 W 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 2 W 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 3 W 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Blinder 4 W 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Left 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Fence Right 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Garage Door" visible="1"/>
+    <Element collapsed="0" type="model" name="Garage Front" visible="1"/>
+    <Element collapsed="0" type="model" name="Garden Fence" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Inner" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Inner 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Inner 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Inner 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Outer" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Outer 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Outer 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Gate Outer 3" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Exterior Lights Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Exterior Lights On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Controller Garage On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Controller On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED DMX Ground Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED DMX Ground On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Full Show Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Full Show On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Garage Front Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Garage Front On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Live Pre Show" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Live Show" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Live Show Stop" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Matrix Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Matrix On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Roof On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Show Audio Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Show Audio On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Standard Show Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Standard Show On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Subwoofer Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Subwoofer On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Tree Off" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Tree On" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.58)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.60)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.62)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.65)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.66)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.67)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.80)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Pillar (.85)" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Volume Max" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - Volume Regular" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Color" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Color Selection" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Line-Dot" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser On" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Rotate" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Shape Group" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Shape Selection" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser X Top-Bottom" visible="1"/>
+    <Element collapsed="0" type="model" name="Laser Y Left-Right" visible="1"/>
+    <Element collapsed="0" type="model" name="Office Window" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 6" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 7" visible="1"/>
+    <Element collapsed="0" type="model" name="Strobe 8" visible="1"/>
+    <Element collapsed="0" type="model" name="Tree" visible="1"/>
+    <Element collapsed="0" type="model" name="front door left" visible="1"/>
+    <Element collapsed="0" type="model" name="front door right" visible="1"/>
+    <Element collapsed="0" type="model" name="garage front 1" visible="1"/>
+    <Element collapsed="0" type="model" name="garage front 2" visible="1"/>
+    <Element collapsed="0" type="model" name="garage front 3" visible="1"/>
+    <Element collapsed="0" type="model" name="garage front 4" visible="1"/>
+    <Element collapsed="0" type="model" name="garage front 5" visible="1"/>
+    <Element collapsed="0" type="model" name="garage front 6" visible="1"/>
+    <Element collapsed="0" type="model" name="roof bath front" visible="1"/>
+    <Element collapsed="0" type="model" name="roof bath side" visible="1"/>
+    <Element collapsed="0" type="model" name="roof entry front" visible="1"/>
+    <Element collapsed="0" type="model" name="roof entry side left" visible="1"/>
+    <Element collapsed="0" type="model" name="roof entry side right" visible="1"/>
+    <Element collapsed="0" type="model" name="roof garage front" visible="1"/>
+    <Element collapsed="0" type="model" name="roof garage side" visible="1"/>
+    <Element collapsed="0" type="model" name="roof main-1 front" visible="1"/>
+    <Element collapsed="0" type="model" name="roof main-1 side" visible="1"/>
+    <Element collapsed="0" type="model" name="roof main-2 side" visible="1"/>
+    <Element collapsed="0" type="model" name="roof office front" visible="1"/>
+    <Element collapsed="0" type="model" name="roof office side" visible="1"/>
+    <Element collapsed="0" type="model" name="HA - LED Pillars Strobe" visible="1"/>
+    <Element collapsed="0" type="model" name="Moving Head 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Moving Head 2" visible="1"/>
+    <Element collapsed="0" type="model" name="Moving Head 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Moving Head 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Moving Head 5" visible="1"/>
+    <Element collapsed="0" type="model" name="MH Colors" visible="1"/>
+    <Element collapsed="0" type="model" name="MH Strobe" visible="1"/>
+    <Element collapsed="0" type="model" name="Tree Poly 1" visible="1"/>
+    <Element collapsed="0" type="model" name="Tree Poly 3" visible="1"/>
+    <Element collapsed="0" type="model" name="Tree Poly 4" visible="1"/>
+    <Element collapsed="0" type="model" name="Tree Poly 5" visible="1"/>
+    <Element collapsed="0" type="model" name="Tree Poly 6" visible="1"/>
+  </DisplayElements>
+  <ElementEffects>
+    <Element type="timing" name="New Timing">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.1.2 EVERYTHING FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.1.2a EVERYTHING FRONT-2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.1.3 EVERYTHING FRONT BUT GARDEN MATRIX">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.1.4 EXCEPT MATRIX TREE">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.2.2 EVERYTHING BUT MAIN FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.3.2 ROOF - EVERYTHING FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="02.1.2 OFFICE ROOF FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="03.1.2 BATH ROOF FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="04.1.2 ENTRY ROOF FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="05.1.2 GARAGE ROOF FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="06.1.2 MAIN ROOF FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="07.0.0 FENCE + GATE">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="07.1.1 Fence">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="07.1.2 Fence Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="07.1.3 Fence Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="08.1.1 Gate">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="08.1.2 Gate Inner">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="08.1.3 Gate Outer">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="09.1.1 Pillars">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="09.1.2 Pillars Strobe">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="09.1.2 Pillars Color 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="09.1.2 Pillars Speed %">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="09.1.3 Pillars Group">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="09.1.4 Pillars Transition">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="10.1.1 Tree">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="11.1.1 Garage Front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="11.2.1 Garage Door">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="12.1.1 Front Door">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="12.1.2 Front Door Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="12.1.3 Front Door Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="13.1.1 Garden Fence">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="13.1.2 Garden Street">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="13.1.3 Garden Driveway">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="14.2.1 FENCE GATE GARAGE FRONT">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="15.1.1 Office Window">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.1.1 Blinders">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.1.2 Blinders White">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.2.1 Blinder 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.2.2 Blinder 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.2.3 Blinder 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.2.4 Blinder 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.3.1 Blinder 1 White">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.3.2 Blinder 2 White">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.3.3 Blinder 3 White">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.3.4 Blinder 4 White">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.4.1 Blinder Column A">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.4.2 Blinder Column B">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.1 Blinder Middle 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.2 Blinder Middle 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.3 Blinder Middle 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.4 Blinder Middle 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.5 Blinder Middle 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.6 Blinder Middle 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.7 Blinder Middle 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="16.5.8 Blinder Middle 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1 Strobes">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1.1 Strobes 1368">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1.2 Strobes 2457">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.1.1 Strobe 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="17.10.1 Strobes (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.1 Moving Heads">
+      <EffectLayer/>
+      <EffectLayer>
+        <Effect ref="0" name="DMX MH" startTime="8525" endTime="9525" palette="0"/>
+        <Effect ref="1" name="DMX" selected="1" id="1" startTime="13000" endTime="14000" palette="0"/>
+      </EffectLayer>
+    </Element>
+    <Element type="model" name="18.1.1.1 MH Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.1.2 MH Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.1.3 MH Center">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.2 MH Dimmers">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.2.1 Dimmer 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.2.2 Dimmer 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.2.3 Dimmer 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.2.4 Dimmer 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.2.5 Dimmer 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.3 MH Colors">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.1.4 MH Strobe">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.10.1 MH (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="18.10.2 MH Dimmers (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="19.1.0 Vertical Smoke">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="19.1.1 Vertical Smoke 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="19.1.2 Vertical Smoke 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="19.2.0 Haze">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="19.3.0 Snow">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.1.1 Blinders (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.3.1 ROOF - ALL (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.3.2 EVERYTHING FRONT (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.3.2 EVERYTHING FRONT EXCEPT GATE (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.3.3 EVERYTHING FRONT BUT GARDEN MATRIX (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.3.3 FENCE + GATE (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.3.4 GARAGE FRONT (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.4.2 Gate Inner (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.4.3 Gate Outer (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.5.1 Tree (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="99.6.1 ROOF - EVERYTHING FRONT (Override)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="100.1.1 GARDEN MATRIX">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Garden Matrix">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 RGB 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 RGB 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 RGB 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 RGB 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Ground Fog 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Vertical Smoke 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Vertical Smoke 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Snow 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.1.1 EVERYTHING">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="01.3.1 ROOF - EVERYTHING">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="02.1.1 OFFICE ROOF">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="03.1.1 BATH ROOF">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="04.1.1 ENTRY ROOF">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="05.1.1 GARAGE ROOF">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="06.1.1 MAIN ROOF">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 1 W 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 2 W 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 3 W 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Blinder 4 W 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Left 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Fence Right 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Garage Door">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Garage Front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Garden Fence">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Inner">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Inner 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Inner 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Inner 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Outer">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Outer 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Outer 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Gate Outer 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Exterior Lights Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Exterior Lights On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Controller Garage On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Controller On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED DMX Ground Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED DMX Ground On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Full Show Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Full Show On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Garage Front Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Garage Front On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Live Pre Show">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Live Show">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Live Show Stop">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Matrix Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Matrix On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Roof On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Show Audio Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Show Audio On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Standard Show Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Standard Show On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Subwoofer Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Subwoofer On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Tree Off">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Tree On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.58)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.60)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.62)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.65)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.66)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.67)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.80)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Pillar (.85)">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Volume Max">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - Volume Regular">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Color">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Color Selection">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Line-Dot">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser On">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Rotate">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Shape Group">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Shape Selection">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser X Top-Bottom">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Laser Y Left-Right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Office Window">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 7">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Strobe 8">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Tree">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="front door left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="front door right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="garage front 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="garage front 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="garage front 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="garage front 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="garage front 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="garage front 6">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof bath front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof bath side">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof entry front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof entry side left">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof entry side right">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof garage front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof garage side">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof main-1 front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof main-1 side">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof main-2 side">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof office front">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="roof office side">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="HA - LED Pillars Strobe">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Moving Head 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Moving Head 2">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Moving Head 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Moving Head 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Moving Head 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="MH Colors">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="MH Strobe">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Tree Poly 1">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Tree Poly 3">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Tree Poly 4">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Tree Poly 5">
+      <EffectLayer/>
+    </Element>
+    <Element type="model" name="Tree Poly 6">
+      <EffectLayer/>
+    </Element>
+  </ElementEffects>
+  <lastView>3</lastView>
+  <TimingTags>
+    <Tag number="0" position="-1"/>
+    <Tag number="1" position="-1"/>
+    <Tag number="2" position="-1"/>
+    <Tag number="3" position="-1"/>
+    <Tag number="4" position="-1"/>
+    <Tag number="5" position="-1"/>
+    <Tag number="6" position="-1"/>
+    <Tag number="7" position="-1"/>
+    <Tag number="8" position="-1"/>
+    <Tag number="9" position="-1"/>
+  </TimingTags>
+</xsequence>

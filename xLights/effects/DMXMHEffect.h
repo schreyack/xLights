@@ -16,6 +16,10 @@
 #define DMXMH_MIN 0
 #define DMXMH_MAX 255
 
+// Pan/Tilt 16-bit range (0-3600 degrees)
+#define DMXMH_PAN_TILT_MIN 0
+#define DMXMH_PAN_TILT_MAX 3600
+
 constexpr int DMXMH_CHANNELS = 48;
 
 class DMXMHEffect : public RenderableEffect

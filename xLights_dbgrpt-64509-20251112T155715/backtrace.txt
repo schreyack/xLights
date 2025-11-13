@@ -1,0 +1,44 @@
+xLights version 2025.12.1
+Time: 2025-11-12T15:57:17
+Crashed Thread ID: 0x206dd1f00 (Main Thread)
+
+0   xLights                             0x0000000105ecd9a4 _ZN14xlCrashHandler11HandleCrashEbRKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEE + 3580
+1   xLights                             0x0000000106ac6b04 _ZN9xlBaseApp16OnFatalExceptionEv + 88
+2   xLights                             0x0000000106d000c4 _ZL20wxFatalSignalHandleri + 36
+3   libsystem_platform.dylib            0x0000000198cfc624 _sigtramp + 56
+4   xLights                             0x0000000106c14edc _ZN11DMXMHEffect20SetDefaultParametersEv + 1684
+5   xLights                             0x0000000105dfcf4c _ZN12EffectsPanel22SetDefaultEffectValuesERK8wxString + 156
+6   xLights                             0x0000000106266e40 _ZN12xLightsFrame25ResetPanelDefaultSettingsERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEEPK5Modelb + 236
+7   xLights                             0x0000000106265f00 _ZN12xLightsFrame17SetEffectControlsERKNSt3__112basic_stringIcNS0_11char_traitsIcEENS0_9allocatorIcEEEES8_RK11SettingsMapSB_iib + 252
+8   xLights                             0x000000010626696c _ZN12xLightsFrame21SelectedEffectChangedER26SelectedEffectChangedEvent + 1684
+9   xLights                             0x0000000106d03d54 _ZN12wxEvtHandler23SearchDynamicEventTableER7wxEvent + 300
+10  xLights                             0x0000000106d03a34 _ZN12wxEvtHandler12ProcessEventER7wxEvent + 292
+11  xLights                             0x0000000106d03bc8 _ZN12wxEvtHandler19ProcessEventLocallyER7wxEvent + 220
+12  xLights                             0x0000000106d03980 _ZN12wxEvtHandler12ProcessEventER7wxEvent + 112
+13  xLights                             0x0000000106ea25b0 _ZN12wxWindowBase8TryAfterER7wxEvent + 128
+14  xLights                             0x0000000106ea25b0 _ZN12wxWindowBase8TryAfterER7wxEvent + 128
+15  xLights                             0x0000000106ea25b0 _ZN12wxWindowBase8TryAfterER7wxEvent + 128
+16  xLights                             0x0000000106b68188 _ZNK11EffectsGrid26RaiseSelectedEffectChangedEP6Effectbbb + 96
+17  xLights                             0x0000000106b5b0e4 _ZN11EffectsGrid9mouseDownER12wxMouseEvent + 1940
+18  xLights                             0x0000000106d02cc0 _ZN16wxEventHashTable11HandleEventER7wxEventP12wxEvtHandler + 692
+19  xLights                             0x0000000106d03b5c _ZN12wxEvtHandler19ProcessEventLocallyER7wxEvent + 112
+20  xLights                             0x0000000106d03980 _ZN12wxEvtHandler12ProcessEventER7wxEvent + 112
+21  xLights                             0x0000000106d03820 _ZN12wxEvtHandler18SafelyProcessEventER7wxEvent + 156
+22  xLights                             0x0000000106dcc688 _ZN17wxWidgetCocoaImpl18DoHandleMouseEventEP7NSEvent + 96
+23  xLights                             0x0000000106dc5900 _ZN17wxWidgetCocoaImpl10mouseEventEP7NSEventP6NSViewPv + 184
+24  AppKit                              0x000000019ce6dc54 -[NSWindow(NSEventRouting) _handleMouseDownEvent:isDelayedEvent:] + 3664
+25  AppKit                              0x000000019cdf9cc4 -[NSWindow(NSEventRouting) _reallySendEvent:isDelayedEvent:] + 492
+26  AppKit                              0x000000019cdf9910 -[NSWindow(NSEventRouting) sendEvent:] + 288
+27  xLights                             0x0000000106dae448 -[wxNSWindow sendEvent:] + 116
+28  AppKit                              0x000000019d671330 -[NSApplication(NSEventRouting) sendEvent:] + 1504
+29  xLights                             0x0000000106d2554c -[wxNSApplication sendEvent:] + 84
+30  AppKit                              0x000000019d27042c -[NSApplication _handleEvent:] + 60
+31  AppKit                              0x000000019ccc6c8c -[NSApplication run] + 520
+32  xLights                             0x0000000106da4500 _ZN14wxGUIEventLoop8OSXDoRunEv + 112
+33  xLights                             0x0000000106cf0204 _ZN13wxCFEventLoop5DoRunEv + 40
+34  xLights                             0x0000000106c81278 _ZN15wxEventLoopBase3RunEv + 132
+35  xLights                             0x0000000106c5e690 _ZN16wxAppConsoleBase8MainLoopEv + 132
+36  xLights                             0x0000000106d62b74 _ZN5wxApp5OnRunEv + 64
+37  xLights                             0x0000000106ca6fb0 _Z7wxEntryRiPPw + 852
+38  xLights                             0x0000000106ac11d4 main + 700
+39  dyld                                0x0000000198922b98 start + 6076
