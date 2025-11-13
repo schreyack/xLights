@@ -56,3 +56,5 @@ xScanner/x64
 *~
 /.vs/xLights/v17
 .vscode/settings.json
+xLights/ai/AppleIntelligence.cpp
+xLights/ai/AppleIntelligenceUtils.swift.disabled
