@@ -226,8 +226,9 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
     const std::string& string_type = model_info->GetStringType();
     xlColor color = xlBLACK;
 
-    // Get pan slider value (0 to 5400), convert to float degrees
-    float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, 5400, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
+    // Get pan range from model (degrees)
+    int pan_range = wxAtoi(model_info->GetModelXml()->GetAttribute("RangeOfMotion", "540"));
+    float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, pan_range * 10, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
     float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
 
     // Apply inversion if needed
@@ -262,7 +263,7 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
         return static_cast<int>(norm * 65535.0f + 0.5f);
     };
 
-    int pan_cmd = ConvertDegreesToDMX(pan_pos, 0.0f, 540.0f);
+    int pan_cmd = ConvertDegreesToDMX(pan_pos, 0.0f, static_cast<float>(pan_range));
     int tilt_cmd = ConvertDegreesToDMX(tilt_pos, -180.0f, 180.0f);
     // Channels: pan coarse=1, pan fine=2; tilt coarse=3, tilt fine=4
     WriteCmdToPixel(1, 2, pan_cmd, buffer);
