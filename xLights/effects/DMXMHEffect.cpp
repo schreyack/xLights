@@ -16,6 +16,17 @@
 #include "../models/Model.h"
 #include "../models/ModelGroup.h"
 
+#include "../models/DMX/DmxMovingHeadComm.h"
+#include "../models/DMX/DmxMotor.h"
+
+#include "wx/slider.h"
+#include "wx/stattext.h"
+#include "wx/textctrl.h"
+#include "wx/checkbox.h"
+#include <wx/bmpbuttn.h>
+#include <wx/panel.h>
+#include <wx/window.h>
+
 #include "../../include/dmx-16.xpm"
 #include "../../include/dmx-24.xpm"
 #include "../../include/dmx-32.xpm"
@@ -87,18 +98,13 @@ static int GetPctMH(wxString const& val)
 
 void DMXMHEffect::SetDefaultParameters() {
     DMXMHPanel *dp = (DMXMHPanel*)panel;
-    if (dp == nullptr) {
-        return;
-    }
+    if (!dp) return;
 
-    dp->ValueCurve_DMXMH1->SetActive(false);
-    dp->ValueCurve_DMXMH2->SetActive(false);
+    if (dp->ValueCurve_DMXMH1) dp->ValueCurve_DMXMH1->SetActive(false);
+    if (dp->ValueCurve_DMXMH2) dp->ValueCurve_DMXMH2->SetActive(false);
 
-    dp->Slider_DMXMH1->SetValue(0);
-    dp->Slider_DMXMH2->SetValue(0);
-
-    dp->CheckBox_INVDMXMH1->SetValue(false);
-    dp->CheckBox_INVDMXMH2->SetValue(false);
+    if (dp->CheckBox_INVDMXMH1) static_cast<wxCheckBox*>(dp->CheckBox_INVDMXMH1)->SetValue(false);
+    if (dp->CheckBox_INVDMXMH2) static_cast<wxCheckBox*>(dp->CheckBox_INVDMXMH2)->SetValue(false);
 }
 
 void DMXMHEffect::adjustSettings(const std::string &version, Effect *effect, bool removeDefaults)
@@ -216,73 +222,63 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
         return;
     }
 
+    // Use DmxMovingHeadComm for motor access
+    auto mhead = dynamic_cast<const DmxMovingHeadComm*>(model_info);
+    if (!mhead) {
+        return;
+    }
+
     int const num_channels = model_info->GetNumChannels();
-
     const std::string& string_type = model_info->GetStringType();
-
     xlColor color = xlBLACK;
 
-    // Pan/Tilt to DMX conversion for channels 1-4
-    // Pan and Tilt are 16-bit values (0-65535) representing 0-3600 degrees
-    // DMX mapping: Channel 1 = Pan coarse (MSB), Channel 2 = Pan fine (LSB),
-    //             Channel 3 = Tilt coarse (MSB), Channel 4 = Tilt fine (LSB)
-    
-    // Get Pan value (0-65535 representing 0-3600 degrees)
-    int pan_16bit = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, 65535, buffer.GetStartTimeMS(), buffer.GetEndTimeMS());
-    int pan_coarse = (pan_16bit >> 8) & 0xFF;  // MSB
-    int pan_fine = pan_16bit & 0xFF;            // LSB
-    
-    // Get Tilt value (0-65535 representing 0-3600 degrees)
-    int tilt_16bit = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, 0, 65535, buffer.GetStartTimeMS(), buffer.GetEndTimeMS());
-    int tilt_coarse = (tilt_16bit >> 8) & 0xFF;  // MSB
-    int tilt_fine = tilt_16bit & 0xFF;            // LSB
-    
+    // Get pan/tilt slider values (-1800 to 1800), convert to float degrees
+    float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
+    float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
+
     // Apply inversion if needed
     if (SettingsMap.GetBool("CHECKBOX_INVMHDMXMH1", false)) {
-        pan_coarse = 255 - pan_coarse;
-        pan_fine = 255 - pan_fine;
+        pan_pos = -pan_pos;
     }
     if (SettingsMap.GetBool("CHECKBOX_INVMHDMXMH2", false)) {
-        tilt_coarse = 255 - tilt_coarse;
-        tilt_fine = 255 - tilt_fine;
+        tilt_pos = -tilt_pos;
     }
-    
-    // Set Pan/Tilt channels
-    if (num_channels >= 1) {
-        color.red = pan_coarse;
-        color.green = 0;
-        color.blue = 0;
-        buffer.SetPixel(0, 0, color, false, false, true);
-    }
-    if (num_channels >= 2) {
-        color.red = pan_fine;
-        color.green = 0;
-        color.blue = 0;
-        buffer.SetPixel(1, 0, color, false, false, true);
-    }
-    if (num_channels >= 3) {
-        color.red = tilt_coarse;
-        color.green = 0;
-        color.blue = 0;
-        buffer.SetPixel(2, 0, color, false, false, true);
-    }
-    if (num_channels >= 4) {
-        color.red = tilt_fine;
-        color.green = 0;
-        color.blue = 0;
-        buffer.SetPixel(3, 0, color, false, false, true);
-    }
-    
-    // Handle remaining channels (5+) as before
+
+    // Convert to DMX command using motor objects
+    DmxMotorBase* panMotor = const_cast<DmxMotorBase*>(mhead->GetPanMotor());
+    DmxMotorBase* tiltMotor = const_cast<DmxMotorBase*>(mhead->GetTiltMotor());
+    int pan_cmd = panMotor->ConvertPostoCmd(pan_pos);
+    int tilt_cmd = tiltMotor->ConvertPostoCmd(tilt_pos);
+
+    // Write DMX values using motor channel mapping
+    // Helper function: WriteCmdToPixel
+    auto WriteCmdToPixel = [](DmxMotorBase* motor, int cmd, RenderBuffer& buffer) {
+        int coarse = motor->GetChannelCoarse();
+        int fine = motor->GetChannelFine();
+        uint8_t msb = (cmd >> 8) & 0xFF;
+        uint8_t lsb = cmd & 0xFF;
+        xlColor msb_c = xlBLACK;
+        msb_c.red = msb;
+        msb_c.green = msb;
+        msb_c.blue = msb;
+        xlColor lsb_c = xlBLACK;
+        lsb_c.red = lsb;
+        lsb_c.green = lsb;
+        lsb_c.blue = lsb;
+        if (coarse > 0) buffer.SetPixel(coarse - 1, 0, msb_c, false, false, true);
+        if (fine > 0) buffer.SetPixel(fine - 1, 0, lsb_c, false, false, true);
+    };
+    WriteCmdToPixel(panMotor, pan_cmd, buffer);
+    WriteCmdToPixel(tiltMotor, tilt_cmd, buffer);
+
+    // Handle remaining channels as before
     if (StartsWith(string_type, "Single Color")) {
-        // handle channels for single color nodes
         for (uint32_t i = 5; i <= DMXMH_CHANNELS; ++i) {
             if (SetDMXMHSinglColorPixel(i, num_channels, SettingsMap, eff_pos, color, buffer))
                 return;
         }
-   } else {
-        // handle channels for 3 color nodes
-       for (uint32_t i = 2; i <= DMXMH_CHANNELS / 3; ++i) {
+    } else {
+        for (uint32_t i = 2; i <= DMXMH_CHANNELS / 3; ++i) {
             if (SetDMXMHRGBNode(i, num_channels, SettingsMap, eff_pos, color, buffer, string_type))
                 return;
         }
@@ -291,64 +287,16 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
 
 void DMXMHEffect::SetPanelStatus(Model *cls) {
     DMXMHPanel *p = (DMXMHPanel*)panel;
-    if (p == nullptr) {
-        return;
-    }
-    if (cls == nullptr) {
-        return;
-    }
-
+    if (!p || !cls) return;
     Model* m = cls;
     if (cls->GetDisplayAs() == "ModelGroup") {
         m = dynamic_cast<ModelGroup*>(cls)->GetFirstModel();
-        if (m == nullptr) m = cls;
+        if (!m) m = cls;
     }
-
-    int const num_channels = m->GetNumChannels();
-
-    for (int i = 1; i <= DMXMH_CHANNELS; ++i) {
-        wxString const label_ctrl = wxString::Format("ID_STATICTEXT_DMXMH%d", i);
-        std::string name;
-        if (i == 1) {
-            name = "Pan (16 bit)";
-        } else if (i == 2) {
-            name = "Tilt (16 bit)";
-        } else {
-            name = m->GetNodeName(i - 1);
-            if (name.empty()) {
-                name = wxString::Format("Channel %d", i).ToStdString();
-            }
-        }
-        wxStaticText* label = (wxStaticText*)(p->FindWindowByName(label_ctrl));
-        if( label != nullptr ) {
-            label->SetLabel(wxString::Format("%s:", name));
-        }
-        wxString const slider_ctrl = wxString::Format("ID_SLIDER_DMXMH%d", i);
-        wxSlider* slider = (wxSlider*)(p->FindWindowByName(slider_ctrl));
-        wxString const vc_ctrl = wxString::Format("ID_VALUECURVE_DMXMH%d", i);
-        wxBitmapButton* curve = (wxBitmapButton*)(p->FindWindowByName(vc_ctrl));
-        wxString const text_ctrl = wxString::Format("IDD_TEXTCTRL_DMXMH%d", i);
-        wxTextCtrl* text = (wxTextCtrl*)(p->FindWindowByName(text_ctrl));
-        wxString const inv_ctrl = wxString::Format("ID_CHECKBOX_INVDMXMH%d", i);
-        wxCheckBox* inv = (wxCheckBox*)(p->FindWindowByName(inv_ctrl));
-        if (i > num_channels) {
-            if( label != nullptr ) label->Enable(false);
-            if( slider != nullptr ) slider->Enable(false);
-            if( curve != nullptr ) curve->Enable(false);
-            if( text != nullptr ) text->Enable(false);
-            if (inv != nullptr)
-                inv->Enable(false);
-        } else {
-            if( label != nullptr ) label->Enable(true);
-            if( slider != nullptr ) slider->Enable(true);
-            if( curve != nullptr ) curve->Enable(true);
-            if (text != nullptr)
-                text->Enable(true);
-            if (inv != nullptr)
-                inv->Enable(true);
-        }
-    }
-    p->FlexGridSizer_Panel1->Layout();
-    p->FlexGridSizer_Main->Layout();
-    p->Refresh();
+    // Only update pan/tilt labels for now
+    // No SetLabel needed for wxStaticText, as label is set in constructor
+    if (p->CheckBox_INVDMXMH1) static_cast<wxCheckBox*>(p->CheckBox_INVDMXMH1)->SetValue(false);
+    if (p->CheckBox_INVDMXMH2) static_cast<wxCheckBox*>(p->CheckBox_INVDMXMH2)->SetValue(false);
+    if (p->FlexGridSizer_Panel1) p->FlexGridSizer_Panel1->Layout();
+    if (p->FlexGridSizer_Main) p->FlexGridSizer_Main->Layout();
 }
