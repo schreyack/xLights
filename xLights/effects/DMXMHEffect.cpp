@@ -226,8 +226,8 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
     const std::string& string_type = model_info->GetStringType();
     xlColor color = xlBLACK;
 
-    // Get pan/tilt slider values (-1800 to 1800), convert to float degrees
-    float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
+    // Get pan slider value (0 to 5400), convert to float degrees
+    float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, 5400, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
     float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
 
     // Apply inversion if needed
@@ -255,14 +255,14 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
         if (fine > 0) buffer.SetPixel(fine - 1, 0, lsb_c, false, false, true);
     };
 
-    // Simple conversion: map -180 to 180 degrees to 0-65535 DMX
+    // Conversion: map 0 to 540 degrees to 0-65535 DMX
     auto ConvertDegreesToDMX = [](float degrees, float min_deg, float max_deg) {
         float clamped = std::max(min_deg, std::min(max_deg, degrees));
         float norm = (clamped - min_deg) / (max_deg - min_deg);
         return static_cast<int>(norm * 65535.0f + 0.5f);
     };
 
-    int pan_cmd = ConvertDegreesToDMX(pan_pos, -180.0f, 180.0f);
+    int pan_cmd = ConvertDegreesToDMX(pan_pos, 0.0f, 540.0f);
     int tilt_cmd = ConvertDegreesToDMX(tilt_pos, -180.0f, 180.0f);
     // Channels: pan coarse=1, pan fine=2; tilt coarse=3, tilt fine=4
     WriteCmdToPixel(1, 2, pan_cmd, buffer);
