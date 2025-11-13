@@ -490,14 +490,20 @@ void DMXMHEffect::SetPanelStatus(Model *cls) {
 
     for (int i = 1; i <= DMXMH_CHANNELS; ++i) {
         wxString const label_ctrl = wxString::Format("ID_STATICTEXT_DMXMH%d", i);
-        std::string const name = m->GetNodeName(i - 1);
+        std::string name;
+        if (i == 1) {
+            name = "Pan (16 bit)";
+        } else if (i == 2) {
+            name = "Tilt (16 bit)";
+        } else {
+            name = m->GetNodeName(i - 1);
+            if (name.empty()) {
+                name = wxString::Format("Channel %d", i).ToStdString();
+            }
+        }
         wxStaticText* label = (wxStaticText*)(p->FindWindowByName(label_ctrl));
         if( label != nullptr ) {
-            if (name.empty()) {
-                label->SetLabel(wxString::Format("Channel%d:", i));
-            } else {
-                label->SetLabel(wxString::Format("%s:", name));
-            }
+            label->SetLabel(wxString::Format("%s:", name));
         }
         wxString const slider_ctrl = wxString::Format("ID_SLIDER_DMXMH%d", i);
         wxSlider* slider = (wxSlider*)(p->FindWindowByName(slider_ctrl));

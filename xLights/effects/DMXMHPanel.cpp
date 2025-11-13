@@ -352,9 +352,9 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	ChannelPanelMH1 = new wxPanel(Notebook7, ID_PANEL6, wxDefaultPosition, wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL6"));
 	FlexGridSizer_Panel1 = new wxFlexGridSizer(0, 5, 0, 0);
 	FlexGridSizer_Panel1->AddGrowableCol(1);
-	Label_DMXMH1 = new wxStaticText(ChannelPanelMH1, ID_STATICTEXT_DMXMH1, _("Channel 1:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT_DMXMH1"));
+	Label_DMXMH1 = new wxStaticText(ChannelPanelMH1, ID_STATICTEXT_DMXMH1, _("Pan (16 bit):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT_DMXMH1"));
 	FlexGridSizer_Panel1->Add(Label_DMXMH1, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 2);
-	Slider_DMXMH1 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH1, 0, 0, 255, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH1"));
+	Slider_DMXMH1 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH1, 0, 0, 3600, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH1"));
 	FlexGridSizer_Panel1->Add(Slider_DMXMH1, 1, wxALL|wxEXPAND, 2);
 	ValueCurve_DMXMH1 = new BulkEditValueCurveButton(ChannelPanelMH1, ID_VALUECURVE_DMXMH1, GetValueCurveNotSelectedBitmap(), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_VALUECURVE_DMXMH1"));
 	FlexGridSizer_Panel1->Add(ValueCurve_DMXMH1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 1);
@@ -363,9 +363,9 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	CheckBox_INVDMXMH1 = new BulkEditCheckBox(ChannelPanelMH1, ID_CHECKBOX_INVDMXMH1, _("Inv"), wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX_INVDMXMH1"));
 	CheckBox_INVDMXMH1->SetValue(false);
 	FlexGridSizer_Panel1->Add(CheckBox_INVDMXMH1, 1, wxALL|wxEXPAND, 2);
-	Label_DMXMH2 = new wxStaticText(ChannelPanelMH1, ID_STATICTEXT_DMXMH2, _("Channel 2:"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT_DMXMH2"));
+	Label_DMXMH2 = new wxStaticText(ChannelPanelMH1, ID_STATICTEXT_DMXMH2, _("Tilt (16 bit):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT_DMXMH2"));
 	FlexGridSizer_Panel1->Add(Label_DMXMH2, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 2);
-	Slider_DMXMH2 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH2, 0, 0, 255, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH2"));
+	Slider_DMXMH2 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH2, 0, 0, 3600, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH2"));
 	FlexGridSizer_Panel1->Add(Slider_DMXMH2, 1, wxALL|wxEXPAND, 2);
 	ValueCurve_DMXMH2 = new BulkEditValueCurveButton(ChannelPanelMH1, ID_VALUECURVE_DMXMH2, GetValueCurveNotSelectedBitmap(), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_VALUECURVE_DMXMH2"));
 	FlexGridSizer_Panel1->Add(ValueCurve_DMXMH2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 1);
@@ -957,8 +957,10 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	Connect(wxID_ANY, EVT_VALIDATEWINDOW, (wxObjectEventFunction)&DMXMHPanel::OnValidateWindow, 0, this);
 	Connect(ID_BUTTON1, wxEVT_CONTEXT_MENU, (wxObjectEventFunction)&DMXMHPanel::OnButtonRemapRClick);
 
-    ValueCurve_DMXMH1->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
-    ValueCurve_DMXMH2->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
+    // DMXMH1 is Pan (16-bit, 0-3600 degrees)
+    ValueCurve_DMXMH1->GetValue()->SetLimits(0, 3600);
+    // DMXMH2 is Tilt (16-bit, 0-3600 degrees)
+    ValueCurve_DMXMH2->GetValue()->SetLimits(0, 3600);
     ValueCurve_DMXMH3->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
     ValueCurve_DMXMH4->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
     ValueCurve_DMXMH5->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
@@ -1005,6 +1007,68 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
     ValueCurve_DMXMH46->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
     ValueCurve_DMXMH47->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
     ValueCurve_DMXMH48->GetValue()->SetLimits(DMX_MIN, DMX_MAX);
+
+    // Hide extra notebook pages - only show Pan/Tilt tab
+    ChannelPanelMH2->Hide();
+    ChannelPanelMH3->Hide();
+    
+    // Hide channels 3-16 in the first panel (keep only Pan/Tilt visible)
+    Label_DMXMH3->Hide();
+    Slider_DMXMH3->Hide();
+    ValueCurve_DMXMH3->Hide();
+    CheckBox_INVDMXMH3->Hide();
+    Label_DMXMH4->Hide();
+    Slider_DMXMH4->Hide();
+    ValueCurve_DMXMH4->Hide();
+    CheckBox_INVDMXMH4->Hide();
+    Label_DMXMH5->Hide();
+    Slider_DMXMH5->Hide();
+    ValueCurve_DMXMH5->Hide();
+    CheckBox_INVDMXMH5->Hide();
+    Label_DMXMH6->Hide();
+    Slider_DMXMH6->Hide();
+    ValueCurve_DMXMH6->Hide();
+    CheckBox_INVDMXMH6->Hide();
+    Label_DMXMH7->Hide();
+    Slider_DMXMH7->Hide();
+    ValueCurve_DMXMH7->Hide();
+    CheckBox_INVDMXMH7->Hide();
+    Label_DMXMH8->Hide();
+    Slider_DMXMH8->Hide();
+    ValueCurve_DMXMH8->Hide();
+    CheckBox_INVDMXMH8->Hide();
+    Label_DMXMH9->Hide();
+    Slider_DMXMH9->Hide();
+    ValueCurve_DMXMH9->Hide();
+    CheckBox_INVDMXMH9->Hide();
+    Label_DMXMH10->Hide();
+    Slider_DMXMH10->Hide();
+    ValueCurve_DMXMH10->Hide();
+    CheckBox_INVDMXMH10->Hide();
+    Label_DMXMH11->Hide();
+    Slider_DMXMH11->Hide();
+    ValueCurve_DMXMH11->Hide();
+    CheckBox_INVDMXMH11->Hide();
+    Label_DMXMH12->Hide();
+    Slider_DMXMH12->Hide();
+    ValueCurve_DMXMH12->Hide();
+    CheckBox_INVDMXMH12->Hide();
+    Label_DMXMH13->Hide();
+    Slider_DMXMH13->Hide();
+    ValueCurve_DMXMH13->Hide();
+    CheckBox_INVDMXMH13->Hide();
+    Label_DMXMH14->Hide();
+    Slider_DMXMH14->Hide();
+    ValueCurve_DMXMH14->Hide();
+    CheckBox_INVDMXMH14->Hide();
+    Label_DMXMH15->Hide();
+    Slider_DMXMH15->Hide();
+    ValueCurve_DMXMH15->Hide();
+    CheckBox_INVDMXMH15->Hide();
+    Label_DMXMH16->Hide();
+    Slider_DMXMH16->Hide();
+    ValueCurve_DMXMH16->Hide();
+    CheckBox_INVDMXMH16->Hide();
 
 	ValidateWindow();
 }
