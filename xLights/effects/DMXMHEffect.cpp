@@ -222,12 +222,6 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
         return;
     }
 
-    // Use DmxMovingHeadComm for motor access
-    auto mhead = dynamic_cast<const DmxMovingHeadComm*>(model_info);
-    if (!mhead) {
-        return;
-    }
-
     int const num_channels = model_info->GetNumChannels();
     const std::string& string_type = model_info->GetStringType();
     xlColor color = xlBLACK;
@@ -244,17 +238,9 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
         tilt_pos = -tilt_pos;
     }
 
-    // Convert to DMX command using motor objects
-    DmxMotorBase* panMotor = const_cast<DmxMotorBase*>(mhead->GetPanMotor());
-    DmxMotorBase* tiltMotor = const_cast<DmxMotorBase*>(mhead->GetTiltMotor());
-    int pan_cmd = panMotor->ConvertPostoCmd(pan_pos);
-    int tilt_cmd = tiltMotor->ConvertPostoCmd(tilt_pos);
-
-    // Write DMX values using motor channel mapping
-    // Helper function: WriteCmdToPixel
-    auto WriteCmdToPixel = [](DmxMotorBase* motor, int cmd, RenderBuffer& buffer) {
-        int coarse = motor->GetChannelCoarse();
-        int fine = motor->GetChannelFine();
+    // --- Begin self-contained motor logic ---
+    // Example: Assume pan uses channels 1/2, tilt uses channels 3/4 (coarse/fine)
+    auto WriteCmdToPixel = [](int coarse, int fine, int cmd, RenderBuffer& buffer) {
         uint8_t msb = (cmd >> 8) & 0xFF;
         uint8_t lsb = cmd & 0xFF;
         xlColor msb_c = xlBLACK;
@@ -268,8 +254,20 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
         if (coarse > 0) buffer.SetPixel(coarse - 1, 0, msb_c, false, false, true);
         if (fine > 0) buffer.SetPixel(fine - 1, 0, lsb_c, false, false, true);
     };
-    WriteCmdToPixel(panMotor, pan_cmd, buffer);
-    WriteCmdToPixel(tiltMotor, tilt_cmd, buffer);
+
+    // Simple conversion: map -180 to 180 degrees to 0-65535 DMX
+    auto ConvertDegreesToDMX = [](float degrees, float min_deg, float max_deg) {
+        float clamped = std::max(min_deg, std::min(max_deg, degrees));
+        float norm = (clamped - min_deg) / (max_deg - min_deg);
+        return static_cast<int>(norm * 65535.0f + 0.5f);
+    };
+
+    int pan_cmd = ConvertDegreesToDMX(pan_pos, -180.0f, 180.0f);
+    int tilt_cmd = ConvertDegreesToDMX(tilt_pos, -180.0f, 180.0f);
+    // Channels: pan coarse=1, pan fine=2; tilt coarse=3, tilt fine=4
+    WriteCmdToPixel(1, 2, pan_cmd, buffer);
+    WriteCmdToPixel(3, 4, tilt_cmd, buffer);
+    // --- End self-contained motor logic ---
 
     // Handle remaining channels as before
     if (StartsWith(string_type, "Single Color")) {
@@ -295,8 +293,8 @@ void DMXMHEffect::SetPanelStatus(Model *cls) {
     }
     // Only update pan/tilt labels for now
     // No SetLabel needed for wxStaticText, as label is set in constructor
-    if (p->CheckBox_INVDMXMH1) static_cast<wxCheckBox*>(p->CheckBox_INVDMXMH1)->SetValue(false);
-    if (p->CheckBox_INVDMXMH2) static_cast<wxCheckBox*>(p->CheckBox_INVDMXMH2)->SetValue(false);
+    if (p->CheckBox_INVDMXMH1) p->CheckBox_INVDMXMH1->SetValue(false);
+    if (p->CheckBox_INVDMXMH2) p->CheckBox_INVDMXMH2->SetValue(false);
     if (p->FlexGridSizer_Panel1) p->FlexGridSizer_Panel1->Layout();
     if (p->FlexGridSizer_Main) p->FlexGridSizer_Main->Layout();
 }
