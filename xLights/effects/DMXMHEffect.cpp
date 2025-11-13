@@ -228,8 +228,10 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
 
     // Get pan range from model (degrees)
     int pan_range = wxAtoi(model_info->GetModelXml()->GetAttribute("RangeOfMotion", "540"));
+        // Get tilt range from model (degrees)
+        int tilt_range = wxAtoi(model_info->GetModelXml()->GetAttribute("TiltRangeOfMotion", "270"));
     float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, pan_range * 10, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
-    float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
+        float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, 0, tilt_range * 10, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
 
     // Apply inversion if needed
     if (SettingsMap.GetBool("CHECKBOX_INVMHDMXMH1", false)) {
@@ -264,7 +266,7 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
     };
 
     int pan_cmd = ConvertDegreesToDMX(pan_pos, 0.0f, static_cast<float>(pan_range));
-    int tilt_cmd = ConvertDegreesToDMX(tilt_pos, -180.0f, 180.0f);
+        int tilt_cmd = ConvertDegreesToDMX(tilt_pos, 0.0f, static_cast<float>(tilt_range));
     // Channels: pan coarse=1, pan fine=2; tilt coarse=3, tilt fine=4
     WriteCmdToPixel(1, 2, pan_cmd, buffer);
     WriteCmdToPixel(3, 4, tilt_cmd, buffer);
