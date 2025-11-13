@@ -27,14 +27,14 @@
 #include <wx/panel.h>
 #include <wx/window.h>
 
-#include "../../include/dmx-16.xpm"
-#include "../../include/dmx-24.xpm"
-#include "../../include/dmx-32.xpm"
-#include "../../include/dmx-48.xpm"
-#include "../../include/dmx-64.xpm"
+#include "../../include/dmxmh-16.xpm"
+#include "../../include/dmxmh-24.xpm"
+#include "../../include/dmxmh-32.xpm"
+#include "../../include/dmxmh-48.xpm"
+#include "../../include/dmxmh-64.xpm"
 #include "UtilFunctions.h"
 
-DMXMHEffect::DMXMHEffect(int id) : RenderableEffect(id, "DMX MH", dmx_16, dmx_24, dmx_32, dmx_48, dmx_64)
+DMXMHEffect::DMXMHEffect(int id) : RenderableEffect(id, "DMX MH", dmxmh_16, dmxmh_24, dmxmh_32, dmxmh_48, dmxmh_64)
 {
     //ctor
 }
@@ -226,11 +226,10 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
     const std::string& string_type = model_info->GetStringType();
     xlColor color = xlBLACK;
 
-    // Get pan and tilt range from model (degrees)
+    // Get pan range from model (degrees)
     int pan_range = wxAtoi(model_info->GetModelXml()->GetAttribute("RangeOfMotion", "540"));
-    int tilt_range = wxAtoi(model_info->GetModelXml()->GetAttribute("TiltRangeOfMotion", "360"));
     float pan_pos = GetValueCurveInt("DMXMH1", 0, SettingsMap, eff_pos, 0, pan_range * 10, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
-    float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, 0, tilt_range * 10, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
+    float tilt_pos = GetValueCurveInt("DMXMH2", 0, SettingsMap, eff_pos, -1800, 1800, buffer.GetStartTimeMS(), buffer.GetEndTimeMS()) / 10.0f;
 
     // Apply inversion if needed
     if (SettingsMap.GetBool("CHECKBOX_INVMHDMXMH1", false)) {
@@ -265,7 +264,7 @@ void DMXMHEffect::Render(Effect *effect, const SettingsMap &SettingsMap, RenderB
     };
 
     int pan_cmd = ConvertDegreesToDMX(pan_pos, 0.0f, static_cast<float>(pan_range));
-    int tilt_cmd = ConvertDegreesToDMX(tilt_pos, 0.0f, static_cast<float>(tilt_range));
+    int tilt_cmd = ConvertDegreesToDMX(tilt_pos, -180.0f, 180.0f);
     // Channels: pan coarse=1, pan fine=2; tilt coarse=3, tilt fine=4
     WriteCmdToPixel(1, 2, pan_cmd, buffer);
     WriteCmdToPixel(3, 4, tilt_cmd, buffer);

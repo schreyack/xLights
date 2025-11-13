@@ -79,11 +79,9 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	Label_DMXMH1 = new wxStaticText(ChannelPanelMH1, ID_STATICTEXT_DMXMH1, _("Pan (16 bit):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT_DMXMH1"));
 	FlexGridSizer_Panel1->Add(Label_DMXMH1, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 2);
     int pan_range = 540; // Default
-    int tilt_range = 360; // Default
     auto models = GetActiveModels();
     if (!models.empty() && models.front()) {
         pan_range = wxAtoi(models.front()->GetModelXml()->GetAttribute("RangeOfMotion", "540"));
-        tilt_range = wxAtoi(models.front()->GetModelXml()->GetAttribute("TiltRangeOfMotion", "360"));
     }
     Slider_DMXMH1 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH1, 0, 0, pan_range * 10, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH1"));
 	FlexGridSizer_Panel1->Add(Slider_DMXMH1, 1, wxALL|wxEXPAND, 2);
@@ -96,7 +94,7 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 	FlexGridSizer_Panel1->Add(CheckBox_INVDMXMH1, 1, wxALL|wxEXPAND, 2);
 	Label_DMXMH2 = new wxStaticText(ChannelPanelMH1, ID_STATICTEXT_DMXMH2, _("Tilt (16 bit):"), wxDefaultPosition, wxDefaultSize, 0, _T("ID_STATICTEXT_DMXMH2"));
 	FlexGridSizer_Panel1->Add(Label_DMXMH2, 1, wxALL|wxALIGN_RIGHT|wxALIGN_CENTER_VERTICAL, 2);
-    Slider_DMXMH2 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH2, 0, 0, tilt_range * 10, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH2"));
+    Slider_DMXMH2 = new BulkEditSlider(ChannelPanelMH1, ID_SLIDER_DMXMH2, 0, -1800, 1800, wxDefaultPosition, wxDefaultSize, 0, wxDefaultValidator, _T("ID_SLIDER_DMXMH2"));
 	FlexGridSizer_Panel1->Add(Slider_DMXMH2, 1, wxALL|wxEXPAND, 2);
 	ValueCurve_DMXMH2 = new BulkEditValueCurveButton(ChannelPanelMH1, ID_VALUECURVE_DMXMH2, GetValueCurveNotSelectedBitmap(), wxDefaultPosition, wxDefaultSize, wxBU_AUTODRAW|wxBORDER_NONE, wxDefaultValidator, _T("ID_VALUECURVE_DMXMH2"));
 	FlexGridSizer_Panel1->Add(ValueCurve_DMXMH2, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 1);
@@ -134,8 +132,8 @@ DMXMHPanel::DMXMHPanel(wxWindow* parent) : xlEffectPanel(parent)
 
     // DMXMH1 is Pan (16-bit, -1800 to 1800)
     ValueCurve_DMXMH1->GetValue()->SetLimits(0, pan_range * 10);
-    // DMXMH2 is Tilt (16-bit, 0 to tilt_range)
-    ValueCurve_DMXMH2->GetValue()->SetLimits(0, tilt_range * 10);
+    // DMXMH2 is Tilt (16-bit, -1800 to 1800)
+    ValueCurve_DMXMH2->GetValue()->SetLimits(-1800, 1800);
 
 	ValidateWindow();
 }
