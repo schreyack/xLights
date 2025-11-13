@@ -2826,7 +2826,8 @@ bool xLightsFrame::ApplySetting(wxString name, const wxString &value, int count)
 		if (CtrlWin == nullptr) {
             logger_base.error("ApplySetting: Unable to find: %s", (const char*)name.c_str());
             res = false;
-            wxASSERT(false);
+            // Control not found - this can happen when model configuration changes (e.g., reduced channel count)
+            // Don't assert as this is a valid scenario
         }
 	}
     return res;

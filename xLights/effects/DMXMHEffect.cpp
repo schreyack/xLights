@@ -107,38 +107,6 @@ void DMXMHEffect::SetDefaultParameters() {
     dp->ValueCurve_DMXMH14->SetActive(false);
     dp->ValueCurve_DMXMH15->SetActive(false);
     dp->ValueCurve_DMXMH16->SetActive(false);
-    dp->ValueCurve_DMXMH17->SetActive(false);
-    dp->ValueCurve_DMXMH18->SetActive(false);
-    dp->ValueCurve_DMXMH19->SetActive(false);
-    dp->ValueCurve_DMXMH20->SetActive(false);
-    dp->ValueCurve_DMXMH21->SetActive(false);
-    dp->ValueCurve_DMXMH22->SetActive(false);
-    dp->ValueCurve_DMXMH23->SetActive(false);
-    dp->ValueCurve_DMXMH24->SetActive(false);
-    dp->ValueCurve_DMXMH25->SetActive(false);
-    dp->ValueCurve_DMXMH26->SetActive(false);
-    dp->ValueCurve_DMXMH27->SetActive(false);
-    dp->ValueCurve_DMXMH28->SetActive(false);
-    dp->ValueCurve_DMXMH29->SetActive(false);
-    dp->ValueCurve_DMXMH30->SetActive(false);
-    dp->ValueCurve_DMXMH31->SetActive(false);
-    dp->ValueCurve_DMXMH32->SetActive(false);
-    dp->ValueCurve_DMXMH33->SetActive(false);
-    dp->ValueCurve_DMXMH34->SetActive(false);
-    dp->ValueCurve_DMXMH35->SetActive(false);
-    dp->ValueCurve_DMXMH36->SetActive(false);
-    dp->ValueCurve_DMXMH37->SetActive(false);
-    dp->ValueCurve_DMXMH38->SetActive(false);
-    dp->ValueCurve_DMXMH39->SetActive(false);
-    dp->ValueCurve_DMXMH40->SetActive(false);
-    dp->ValueCurve_DMXMH41->SetActive(false);
-    dp->ValueCurve_DMXMH42->SetActive(false);
-    dp->ValueCurve_DMXMH43->SetActive(false);
-    dp->ValueCurve_DMXMH44->SetActive(false);
-    dp->ValueCurve_DMXMH45->SetActive(false);
-    dp->ValueCurve_DMXMH46->SetActive(false);
-    dp->ValueCurve_DMXMH47->SetActive(false);
-    dp->ValueCurve_DMXMH48->SetActive(false);
 
     dp->Slider_DMXMH1->SetValue(0);
     dp->Slider_DMXMH2->SetValue(0);
@@ -156,38 +124,6 @@ void DMXMHEffect::SetDefaultParameters() {
     dp->Slider_DMXMH14->SetValue(0);
     dp->Slider_DMXMH15->SetValue(0);
     dp->Slider_DMXMH16->SetValue(0);
-    dp->Slider_DMXMH17->SetValue(0);
-    dp->Slider_DMXMH18->SetValue(0);
-    dp->Slider_DMXMH19->SetValue(0);
-    dp->Slider_DMXMH20->SetValue(0);
-    dp->Slider_DMXMH21->SetValue(0);
-    dp->Slider_DMXMH22->SetValue(0);
-    dp->Slider_DMXMH23->SetValue(0);
-    dp->Slider_DMXMH24->SetValue(0);
-    dp->Slider_DMXMH25->SetValue(0);
-    dp->Slider_DMXMH26->SetValue(0);
-    dp->Slider_DMXMH27->SetValue(0);
-    dp->Slider_DMXMH28->SetValue(0);
-    dp->Slider_DMXMH29->SetValue(0);
-    dp->Slider_DMXMH30->SetValue(0);
-    dp->Slider_DMXMH31->SetValue(0);
-    dp->Slider_DMXMH32->SetValue(0);
-    dp->Slider_DMXMH33->SetValue(0);
-    dp->Slider_DMXMH34->SetValue(0);
-    dp->Slider_DMXMH35->SetValue(0);
-    dp->Slider_DMXMH36->SetValue(0);
-    dp->Slider_DMXMH37->SetValue(0);
-    dp->Slider_DMXMH38->SetValue(0);
-    dp->Slider_DMXMH39->SetValue(0);
-    dp->Slider_DMXMH40->SetValue(0);
-    dp->Slider_DMXMH41->SetValue(0);
-    dp->Slider_DMXMH42->SetValue(0);
-    dp->Slider_DMXMH43->SetValue(0);
-    dp->Slider_DMXMH44->SetValue(0);
-    dp->Slider_DMXMH45->SetValue(0);
-    dp->Slider_DMXMH46->SetValue(0);
-    dp->Slider_DMXMH47->SetValue(0);
-    dp->Slider_DMXMH48->SetValue(0);
 
     dp->CheckBox_INVDMXMH1->SetValue(false);
     dp->CheckBox_INVDMXMH2->SetValue(false);
@@ -205,38 +141,6 @@ void DMXMHEffect::SetDefaultParameters() {
     dp->CheckBox_INVDMXMH14->SetValue(false);
     dp->CheckBox_INVDMXMH15->SetValue(false);
     dp->CheckBox_INVDMXMH16->SetValue(false);
-    dp->CheckBox_INVDMXMH17->SetValue(false);
-    dp->CheckBox_INVDMXMH18->SetValue(false);
-    dp->CheckBox_INVDMXMH19->SetValue(false);
-    dp->CheckBox_INVDMXMH20->SetValue(false);
-    dp->CheckBox_INVDMXMH21->SetValue(false);
-    dp->CheckBox_INVDMXMH22->SetValue(false);
-    dp->CheckBox_INVDMXMH23->SetValue(false);
-    dp->CheckBox_INVDMXMH24->SetValue(false);
-    dp->CheckBox_INVDMXMH25->SetValue(false);
-    dp->CheckBox_INVDMXMH26->SetValue(false);
-    dp->CheckBox_INVDMXMH27->SetValue(false);
-    dp->CheckBox_INVDMXMH28->SetValue(false);
-    dp->CheckBox_INVDMXMH29->SetValue(false);
-    dp->CheckBox_INVDMXMH30->SetValue(false);
-    dp->CheckBox_INVDMXMH31->SetValue(false);
-    dp->CheckBox_INVDMXMH32->SetValue(false);
-    dp->CheckBox_INVDMXMH33->SetValue(false);
-    dp->CheckBox_INVDMXMH34->SetValue(false);
-    dp->CheckBox_INVDMXMH35->SetValue(false);
-    dp->CheckBox_INVDMXMH36->SetValue(false);
-    dp->CheckBox_INVDMXMH37->SetValue(false);
-    dp->CheckBox_INVDMXMH38->SetValue(false);
-    dp->CheckBox_INVDMXMH39->SetValue(false);
-    dp->CheckBox_INVDMXMH40->SetValue(false);
-    dp->CheckBox_INVDMXMH41->SetValue(false);
-    dp->CheckBox_INVDMXMH42->SetValue(false);
-    dp->CheckBox_INVDMXMH43->SetValue(false);
-    dp->CheckBox_INVDMXMH44->SetValue(false);
-    dp->CheckBox_INVDMXMH45->SetValue(false);
-    dp->CheckBox_INVDMXMH46->SetValue(false);
-    dp->CheckBox_INVDMXMH47->SetValue(false);
-    dp->CheckBox_INVDMXMH48->SetValue(false);
 }
 
 void DMXMHEffect::adjustSettings(const std::string &version, Effect *effect, bool removeDefaults)
@@ -268,8 +172,6 @@ void DMXMHEffect::adjustSettings(const std::string &version, Effect *effect, boo
             settings["E_VALUECURVE_DMXMH14"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH14|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH14"]), GetPctMH(settings["E_SLIDER_DMXMH14_Ramp"]));
             settings["E_VALUECURVE_DMXMH15"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH15|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH15"]), GetPctMH(settings["E_SLIDER_DMXMH15_Ramp"]));
             settings["E_VALUECURVE_DMXMH16"] = "Active=TRUE|Id=ID_VALUECURVE_DMXMH16|Type=Ramp|Min=0.00|Max=255.00|P1=0|P2=0|RV=TRUE|";
-            settings["E_VALUECURVE_DMXMH17"] = "Active=TRUE|Id=ID_VALUECURVE_DMXMH17|Type=Ramp|Min=0.00|Max=255.00|P1=0|P2=0|RV=TRUE|";
-            settings["E_VALUECURVE_DMXMH18"] = "Active=TRUE|Id=ID_VALUECURVE_DMXMH18|Type=Ramp|Min=0.00|Max=255.00|P1=0|P2=0|RV=TRUE|";
             settings.erase("E_SLIDER_DMXMH1");
             settings.erase("E_SLIDER_DMXMH2");
             settings.erase("E_SLIDER_DMXMH3");
@@ -287,8 +189,6 @@ void DMXMHEffect::adjustSettings(const std::string &version, Effect *effect, boo
             settings.erase("E_SLIDER_DMXMH15");
         } else {
             settings["E_SLIDER_DMXMH16"] = "0";
-            settings["E_SLIDER_DMXMH17"] = "0";
-            settings["E_SLIDER_DMXMH18"] = "0";
         }
         settings.erase("E_CHOICE_Num_Dmx_Channels");
         settings.erase("E_CHECKBOX_Use_Dmx_Ramps");
@@ -510,9 +410,9 @@ void DMXMHEffect::SetPanelStatus(Model *cls) {
         wxString const vc_ctrl = wxString::Format("ID_VALUECURVE_DMXMH%d", i);
         wxBitmapButton* curve = (wxBitmapButton*)(p->FindWindowByName(vc_ctrl));
         wxString const text_ctrl = wxString::Format("IDD_TEXTCTRL_DMXMH%d", i);
-        wxBitmapButton* text = (wxBitmapButton*)(p->FindWindowByName(text_ctrl));
-        wxString const inv_ctrl = wxString::Format("ID_CHECKBOX_INVMHDMXMH%d", i);
-        wxBitmapButton* inv = (wxBitmapButton*)(p->FindWindowByName(inv_ctrl));
+        wxTextCtrl* text = (wxTextCtrl*)(p->FindWindowByName(text_ctrl));
+        wxString const inv_ctrl = wxString::Format("ID_CHECKBOX_INVDMXMH%d", i);
+        wxCheckBox* inv = (wxCheckBox*)(p->FindWindowByName(inv_ctrl));
         if (i > num_channels) {
             if( label != nullptr ) label->Enable(false);
             if( slider != nullptr ) slider->Enable(false);
@@ -531,8 +431,6 @@ void DMXMHEffect::SetPanelStatus(Model *cls) {
         }
     }
     p->FlexGridSizer_Panel1->Layout();
-    p->FlexGridSizer_Panel2->Layout();
-    p->FlexGridSizer_Panel3->Layout();
     p->FlexGridSizer_Main->Layout();
     p->Refresh();
 }
