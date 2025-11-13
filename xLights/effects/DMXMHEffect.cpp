@@ -93,54 +93,12 @@ void DMXMHEffect::SetDefaultParameters() {
 
     dp->ValueCurve_DMXMH1->SetActive(false);
     dp->ValueCurve_DMXMH2->SetActive(false);
-    dp->ValueCurve_DMXMH3->SetActive(false);
-    dp->ValueCurve_DMXMH4->SetActive(false);
-    dp->ValueCurve_DMXMH5->SetActive(false);
-    dp->ValueCurve_DMXMH6->SetActive(false);
-    dp->ValueCurve_DMXMH7->SetActive(false);
-    dp->ValueCurve_DMXMH8->SetActive(false);
-    dp->ValueCurve_DMXMH9->SetActive(false);
-    dp->ValueCurve_DMXMH10->SetActive(false);
-    dp->ValueCurve_DMXMH11->SetActive(false);
-    dp->ValueCurve_DMXMH12->SetActive(false);
-    dp->ValueCurve_DMXMH13->SetActive(false);
-    dp->ValueCurve_DMXMH14->SetActive(false);
-    dp->ValueCurve_DMXMH15->SetActive(false);
-    dp->ValueCurve_DMXMH16->SetActive(false);
 
     dp->Slider_DMXMH1->SetValue(0);
     dp->Slider_DMXMH2->SetValue(0);
-    dp->Slider_DMXMH3->SetValue(0);
-    dp->Slider_DMXMH4->SetValue(0);
-    dp->Slider_DMXMH5->SetValue(0);
-    dp->Slider_DMXMH6->SetValue(0);
-    dp->Slider_DMXMH7->SetValue(0);
-    dp->Slider_DMXMH8->SetValue(0);
-    dp->Slider_DMXMH9->SetValue(0);
-    dp->Slider_DMXMH10->SetValue(0);
-    dp->Slider_DMXMH11->SetValue(0);
-    dp->Slider_DMXMH12->SetValue(0);
-    dp->Slider_DMXMH13->SetValue(0);
-    dp->Slider_DMXMH14->SetValue(0);
-    dp->Slider_DMXMH15->SetValue(0);
-    dp->Slider_DMXMH16->SetValue(0);
 
     dp->CheckBox_INVDMXMH1->SetValue(false);
     dp->CheckBox_INVDMXMH2->SetValue(false);
-    dp->CheckBox_INVDMXMH3->SetValue(false);
-    dp->CheckBox_INVDMXMH4->SetValue(false);
-    dp->CheckBox_INVDMXMH5->SetValue(false);
-    dp->CheckBox_INVDMXMH6->SetValue(false);
-    dp->CheckBox_INVDMXMH7->SetValue(false);
-    dp->CheckBox_INVDMXMH8->SetValue(false);
-    dp->CheckBox_INVDMXMH9->SetValue(false);
-    dp->CheckBox_INVDMXMH10->SetValue(false);
-    dp->CheckBox_INVDMXMH11->SetValue(false);
-    dp->CheckBox_INVDMXMH12->SetValue(false);
-    dp->CheckBox_INVDMXMH13->SetValue(false);
-    dp->CheckBox_INVDMXMH14->SetValue(false);
-    dp->CheckBox_INVDMXMH15->SetValue(false);
-    dp->CheckBox_INVDMXMH16->SetValue(false);
 }
 
 void DMXMHEffect::adjustSettings(const std::string &version, Effect *effect, bool removeDefaults)
@@ -158,55 +116,15 @@ void DMXMHEffect::adjustSettings(const std::string &version, Effect *effect, boo
         if (settings.GetBool("E_CHECKBOX_Use_Dmx_Ramps")) {
             settings["E_VALUECURVE_DMXMH1"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH1|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH1"]), GetPctMH(settings["E_SLIDER_DMXMH1_Ramp"]));
             settings["E_VALUECURVE_DMXMH2"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH2|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH2"]), GetPctMH(settings["E_SLIDER_DMXMH2_Ramp"]));
-            settings["E_VALUECURVE_DMXMH3"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH3|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH3"]), GetPctMH(settings["E_SLIDER_DMXMH3_Ramp"]));
-            settings["E_VALUECURVE_DMXMH4"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH4|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH4"]), GetPctMH(settings["E_SLIDER_DMXMH4_Ramp"]));
-            settings["E_VALUECURVE_DMXMH5"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH5|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH5"]), GetPctMH(settings["E_SLIDER_DMXMH5_Ramp"]));
-            settings["E_VALUECURVE_DMXMH6"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH6|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH6"]), GetPctMH(settings["E_SLIDER_DMXMH6_Ramp"]));
-            settings["E_VALUECURVE_DMXMH7"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH7|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH7"]), GetPctMH(settings["E_SLIDER_DMXMH7_Ramp"]));
-            settings["E_VALUECURVE_DMXMH8"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH8|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH8"]), GetPctMH(settings["E_SLIDER_DMXMH8_Ramp"]));
-            settings["E_VALUECURVE_DMXMH9"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH9|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH9"]), GetPctMH(settings["E_SLIDER_DMXMH9_Ramp"]));
-            settings["E_VALUECURVE_DMXMH10"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH10|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH10"]), GetPctMH(settings["E_SLIDER_DMXMH10_Ramp"]));
-            settings["E_VALUECURVE_DMXMH11"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH11|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH11"]), GetPctMH(settings["E_SLIDER_DMXMH11_Ramp"]));
-            settings["E_VALUECURVE_DMXMH12"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH12|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH12"]), GetPctMH(settings["E_SLIDER_DMXMH12_Ramp"]));
-            settings["E_VALUECURVE_DMXMH13"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH13|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH13"]), GetPctMH(settings["E_SLIDER_DMXMH13_Ramp"]));
-            settings["E_VALUECURVE_DMXMH14"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH14|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH14"]), GetPctMH(settings["E_SLIDER_DMXMH14_Ramp"]));
-            settings["E_VALUECURVE_DMXMH15"] = wxString::Format("Active=TRUE|Id=ID_VALUECURVE_DMXMH15|Type=Ramp|Min=0.00|Max=255.00|P1=%d|P2=%d|RV=TRUE|", GetPctMH(settings["E_SLIDER_DMXMH15"]), GetPctMH(settings["E_SLIDER_DMXMH15_Ramp"]));
-            settings["E_VALUECURVE_DMXMH16"] = "Active=TRUE|Id=ID_VALUECURVE_DMXMH16|Type=Ramp|Min=0.00|Max=255.00|P1=0|P2=0|RV=TRUE|";
             settings.erase("E_SLIDER_DMXMH1");
             settings.erase("E_SLIDER_DMXMH2");
-            settings.erase("E_SLIDER_DMXMH3");
-            settings.erase("E_SLIDER_DMXMH4");
-            settings.erase("E_SLIDER_DMXMH5");
-            settings.erase("E_SLIDER_DMXMH6");
-            settings.erase("E_SLIDER_DMXMH7");
-            settings.erase("E_SLIDER_DMXMH8");
-            settings.erase("E_SLIDER_DMXMH9");
-            settings.erase("E_SLIDER_DMXMH10");
-            settings.erase("E_SLIDER_DMXMH11");
-            settings.erase("E_SLIDER_DMXMH12");
-            settings.erase("E_SLIDER_DMXMH13");
-            settings.erase("E_SLIDER_DMXMH14");
-            settings.erase("E_SLIDER_DMXMH15");
         } else {
-            settings["E_SLIDER_DMXMH16"] = "0";
+            // No DMXMH16 for 2-channel setup
         }
         settings.erase("E_CHOICE_Num_Dmx_Channels");
         settings.erase("E_CHECKBOX_Use_Dmx_Ramps");
         settings.erase("E_SLIDER_DMXMH1_Ramp");
         settings.erase("E_SLIDER_DMXMH2_Ramp");
-        settings.erase("E_SLIDER_DMXMH3_Ramp");
-        settings.erase("E_SLIDER_DMXMH4_Ramp");
-        settings.erase("E_SLIDER_DMXMH5_Ramp");
-        settings.erase("E_SLIDER_DMXMH6_Ramp");
-        settings.erase("E_SLIDER_DMXMH7_Ramp");
-        settings.erase("E_SLIDER_DMXMH8_Ramp");
-        settings.erase("E_SLIDER_DMXMH9_Ramp");
-        settings.erase("E_SLIDER_DMXMH10_Ramp");
-        settings.erase("E_SLIDER_DMXMH11_Ramp");
-        settings.erase("E_SLIDER_DMXMH12_Ramp");
-        settings.erase("E_SLIDER_DMXMH13_Ramp");
-        settings.erase("E_SLIDER_DMXMH14_Ramp");
-        settings.erase("E_SLIDER_DMXMH15_Ramp");
     }
 }
 

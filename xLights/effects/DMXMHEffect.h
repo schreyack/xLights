@@ -20,7 +20,7 @@
 #define DMXMH_PAN_TILT_MIN 0
 #define DMXMH_PAN_TILT_MAX 3600
 
-constexpr int DMXMH_CHANNELS = 48;
+constexpr int DMXMH_CHANNELS = 2;
 
 class DMXMHEffect : public RenderableEffect
 {
